@@ -13,6 +13,7 @@
   --bg: #ffffff;
   --text: #111827;
   --muted: #6b7280;
+  --border: #e5e7eb;
   --accent: #2563eb;
 }
 
@@ -20,12 +21,11 @@
   --bg: #0f172a;
   --text: #f1f5f9;
   --muted: #94a3b8;
+  --border: #1e293b;
   --accent: #3b82f6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -35,52 +35,44 @@ body {
   transition: 0.3s ease;
 }
 
-.container {
-  max-width: 900px;
+.wrapper {
+  max-width: 850px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--bg);
-  padding: 15px 40px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1000;
-}
-
-nav a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-section {
-  margin-bottom: 90px;
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 34px;
+  margin-bottom: 8px;
 }
 
 .subtitle {
+  font-size: 16px;
   color: var(--muted);
+}
+
+.contact {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.section {
+  border: 1px solid var(--border);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+}
+
+.section h2 {
   font-size: 18px;
+  margin-bottom: 15px;
 }
 
 .company {
@@ -88,22 +80,25 @@ h2 {
 }
 
 .duration {
+  font-size: 13px;
   color: var(--muted);
-  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 18px;
+  margin-top: 8px;
 }
 
 button {
-  background: none;
   border: 1px solid var(--accent);
+  background: none;
   color: var(--accent);
   padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 5px;
   font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 button:hover {
@@ -111,28 +106,18 @@ button:hover {
   color: white;
 }
 
-.metric {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--accent);
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 footer {
   text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
   color: var(--muted);
-  font-size: 14px;
-  padding-bottom: 40px;
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 </style>
@@ -140,81 +125,94 @@ footer {
 
 <body>
 
-<nav>
-  <div><strong>Khush</strong></div>
-  <div>
-    <a href="#summary">Summary</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <button onclick="toggleDark()">🌙</button>
+<div class="wrapper">
+
+<div class="topbar">
+  <div></div>
+  <button onclick="toggleDark()">Toggle Dark Mode</button>
+</div>
+
+<header>
+  <h1>Khush Deepak Satra</h1>
+  <div class="subtitle">
+    Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise & Public Sector Systems
   </div>
-</nav>
 
-<div class="container">
+  <div class="contact">
+    📍 Mumbai, India <br>
+    📞 +91-9867495833 <br>
+    📧 kush.satra26@gmail.com <br>
+    🔗 linkedin.com/in/khushsatra
+  </div>
 
-<section id="summary" class="fade">
-<h1>Khush Deepak Satra</h1>
-<p class="subtitle">
-Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise Systems
-</p>
-
-<p>
-Delivering enterprise-scale digital systems across Insurance, Public Sector, and HRMS platforms. 
-Driven by structured problem-solving, stakeholder alignment, and measurable business impact.
-</p>
-
-<p class="metric">100K+ Users Impacted</p>
-<p class="metric">60% Workflow Reduction</p>
-
-<br>
-<button onclick="downloadCV()">Download CV</button>
-</section>
+  <br>
+  <button onclick="downloadCV()">Download CV</button>
+</header>
 
 
-<section id="experience" class="fade">
-<h2>Experience</h2>
-
-<p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
-<p class="duration">Dec 2024 – Present | India</p>
-<ul>
-<li>Delivered 4+ HRMS modules supporting 100K+ users.</li>
-<li>Reduced manual workflows by 60% through structured BRD/FRD documentation.</li>
-<li>Acted as Product Owner proxy managing backlog refinement.</li>
-<li>Led UAT planning increasing test coverage by 25%.</li>
-</ul>
-
-<br>
-
-<p class="company">Business Analyst – Munich Re</p>
-<p class="duration">Mar 2023 – Sep 2024 | Dublin, Ireland</p>
-<ul>
-<li>Built Power BI dashboards tracking ARR & KPIs.</li>
-<li>Led Salesforce integration generating 1,400+ leads.</li>
-<li>Contributed to 2x revenue potential for insurance product.</li>
-</ul>
-</section>
+<div class="section">
+  <h2>Professional Summary</h2>
+  <p>
+    Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance,
+    Public Sector, FMCG, and Pharmaceutical domains.
+  </p>
+  <p>
+    Led functional design and Agile delivery for HRMS platforms supporting a user base exceeding 100,000+
+    while reducing manual workflows by up to 60%.
+  </p>
+  <p>
+    Operating in Product Owner-aligned responsibilities including backlog ownership, stakeholder workshops,
+    sprint prioritisation, and value-driven delivery.
+  </p>
+</div>
 
 
-<section id="skills" class="fade">
-<h2>Core Competencies</h2>
-<p>
-Product Backlog Management · User Stories · Agile Scrum · API Integrations ·
-BRD / FRD · UAT · Power BI · Salesforce · Process Mapping
-</p>
-</section>
+<div class="section">
+  <h2>Experience</h2>
+
+  <p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
+  <p class="duration">December 2024 – Present | India</p>
+  <ul>
+    <li>Led end-to-end requirements for 4+ HR modules (Grievance, Engagement, Leave, Attendance).</li>
+    <li>Delivered HRMS solutions serving a 100K+ enterprise user base.</li>
+    <li>Reduced manual workflows by 60% through structured BRD/FRD documentation.</li>
+    <li>Designed 20+ functional wireframes translating As-Is to To-Be system behaviour.</li>
+    <li>Acted as Product Owner proxy managing backlog refinement.</li>
+    <li>Led UAT planning increasing coverage by 25% and preventing critical production defects.</li>
+  </ul>
+
+  <br>
+
+  <p class="company">Business Analyst – Munich Re</p>
+  <p class="duration">March 2023 – September 2024 | Dublin, Ireland</p>
+  <ul>
+    <li>Supported underwriting automation and enterprise data initiatives.</li>
+    <li>Built Power BI dashboards tracking ARR, renewals, and KPIs.</li>
+    <li>Led Salesforce data integration generating 1,400+ high-potential leads.</li>
+    <li>Contributed to 2x revenue potential for insurance product.</li>
+  </ul>
+
+</div>
 
 
-<section id="education" class="fade">
-<h2>Education</h2>
-<p><strong>Master’s in International Business</strong> – Maynooth University</p>
-<p class="duration">€5000 Merit Scholarship | International Student Ambassador</p>
+<div class="section">
+  <h2>Core Competencies</h2>
+  Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API Integrations · UAT · Power BI · Salesforce · Jira · Confluence
+</div>
 
-<br>
 
-<p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
-<p class="duration">9.85/10 | Top 10% Performer</p>
-</section>
+<div class="section">
+  <h2>Education</h2>
+
+  <p><strong>Master’s in International Business</strong> – Maynooth University</p>
+  <p class="duration">Grade 2:1 | €5000 Merit Scholarship | International Student Ambassador</p>
+
+  <br>
+
+  <p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
+  <p class="duration">9.85/10 | Scholarship Awardee | Top 10% Performer</p>
+</div>
+
 
 <footer>
 © 2026 Khush Deepak Satra
@@ -231,17 +229,6 @@ function toggleDark(){
 function downloadCV(){
   window.open("Khush_Satra_CV.pdf","_blank");
 }
-
-const fades = document.querySelectorAll(".fade");
-
-window.addEventListener("scroll", () => {
-  fades.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add("visible");
-    }
-  });
-});
 
 </script>
 
