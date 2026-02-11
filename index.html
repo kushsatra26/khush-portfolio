@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khush Deepak Satra | Business Analyst</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #f8f9fc;
+    --text: #1f2937;
+    --card: #ffffff;
+    --accent: #2563eb;
+}
+
+.dark-mode {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --card: #1e293b;
+    --accent: #3b82f6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h1 { font-size: 42px; margin-bottom: 10px; }
+
+h2 {
+    margin-top: 70px;
+    font-size: 26px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+button:hover { opacity: 0.85; }
+
+.metric {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+footer {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="toggle">
+    <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
+</div>
+
+<div class="container">
+
+<h1>Khush Deepak Satra</h1>
+<p>Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise Systems</p>
+
+<button onclick="downloadCV()">Download CV</button>
+
+<h2>Impact Metrics</h2>
+<div class="card">
+    <div class="metric" data-target="100">0</div>
+    <p>Thousand+ Users Impacted</p>
+
+    <div class="metric" data-target="60">0</div>
+    <p>% Manual Workflow Reduction</p>
+
+    <div class="metric" data-target="1400">0</div>
+    <p>High-Potential Leads Generated</p>
+</div>
+
+<h2>Experience Highlights</h2>
+<div class="card">
+    <ul>
+        <li>Delivered 4+ HRMS modules for LIC (100K+ users)</li>
+        <li>Acted as Product Owner proxy managing Agile backlog</li>
+        <li>Led Salesforce data integration generating 1,400+ leads</li>
+        <li>Increased UAT coverage by 25%</li>
+    </ul>
+</div>
+
+<h2>Core Competencies</h2>
+<div class="card">
+    Product Backlog | BRD/FRD | Agile Scrum | API Integrations | Power BI | Salesforce | UAT | Process Mapping
+</div>
+
+<h2>Education</h2>
+<div class="card">
+    <strong>Master’s in International Business</strong> – Maynooth University (Ireland) <br>
+    €5000 Merit Scholarship | International Student Ambassador <br><br>
+    <strong>Bachelor’s in Management Studies</strong> – University of Mumbai <br>
+    9.85/10 | Top 10%
+</div>
+
+<footer>
+© 2026 Khush Deepak Satra | Built with clarity & impact
+</footer>
+
+</div>
+
+<script>
+
+/* Dark Mode Toggle */
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+/* Smooth Scroll Animation */
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const position = card.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if (position < screenPosition) {
+            card.classList.add('visible');
+        }
+    });
+});
+
+/* Metrics Counter Animation */
+const counters = document.querySelectorAll('.metric');
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / 100;
+
+        const updateCounter = () => {
+            const current = +counter.innerText;
+            if (current < target) {
+                counter.innerText = Math.ceil(current + increment);
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+        updateCounter();
+    });
+};
+
+window.addEventListener('load', animateCounters);
+
+/* Download CV */
+function downloadCV() {
+    window.open("Khush_Satra_CV.pdf", "_blank");
+}
+
+</script>
+
+</body>
+</html>
