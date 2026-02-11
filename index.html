@@ -5,95 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khush Deepak Satra | Business Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-    --bg: #f8f9fc;
-    --text: #1f2937;
-    --card: #ffffff;
-    --accent: #2563eb;
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
 }
 
-.dark-mode {
-    --bg: #0f172a;
-    --text: #f1f5f9;
-    --card: #1e293b;
-    --accent: #3b82f6;
+.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    transition: 0.4s ease;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
 }
 
 .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
 }
 
-h1 { font-size: 42px; margin-bottom: 10px; }
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
+  padding: 15px 40px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  margin-bottom: 90px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
 
 h2 {
-    margin-top: 70px;
-    font-size: 26px;
-    border-left: 4px solid var(--accent);
-    padding-left: 12px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+.subtitle {
+  color: var(--muted);
+  font-size: 18px;
 }
 
-.card.visible {
-    opacity: 1;
-    transform: translateY(0);
+.company {
+  font-weight: 600;
+}
+
+.duration {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 button {
-    background: var(--accent);
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: 0.3s;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-button:hover { opacity: 0.85; }
+button:hover {
+  background: var(--accent);
+  color: white;
+}
 
 .metric {
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 footer {
-    margin-top: 80px;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  padding-bottom: 40px;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 </style>
@@ -101,106 +140,108 @@ footer {
 
 <body>
 
-<div class="toggle">
-    <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
-</div>
+<nav>
+  <div><strong>Khush</strong></div>
+  <div>
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <button onclick="toggleDark()">🌙</button>
+  </div>
+</nav>
 
 <div class="container">
 
+<section id="summary" class="fade">
 <h1>Khush Deepak Satra</h1>
-<p>Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise Systems</p>
+<p class="subtitle">
+Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise Systems
+</p>
 
+<p>
+Delivering enterprise-scale digital systems across Insurance, Public Sector, and HRMS platforms. 
+Driven by structured problem-solving, stakeholder alignment, and measurable business impact.
+</p>
+
+<p class="metric">100K+ Users Impacted</p>
+<p class="metric">60% Workflow Reduction</p>
+
+<br>
 <button onclick="downloadCV()">Download CV</button>
+</section>
 
-<h2>Impact Metrics</h2>
-<div class="card">
-    <div class="metric" data-target="100">0</div>
-    <p>Thousand+ Users Impacted</p>
 
-    <div class="metric" data-target="60">0</div>
-    <p>% Manual Workflow Reduction</p>
+<section id="experience" class="fade">
+<h2>Experience</h2>
 
-    <div class="metric" data-target="1400">0</div>
-    <p>High-Potential Leads Generated</p>
-</div>
+<p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
+<p class="duration">Dec 2024 – Present | India</p>
+<ul>
+<li>Delivered 4+ HRMS modules supporting 100K+ users.</li>
+<li>Reduced manual workflows by 60% through structured BRD/FRD documentation.</li>
+<li>Acted as Product Owner proxy managing backlog refinement.</li>
+<li>Led UAT planning increasing test coverage by 25%.</li>
+</ul>
 
-<h2>Experience Highlights</h2>
-<div class="card">
-    <ul>
-        <li>Delivered 4+ HRMS modules for LIC (100K+ users)</li>
-        <li>Acted as Product Owner proxy managing Agile backlog</li>
-        <li>Led Salesforce data integration generating 1,400+ leads</li>
-        <li>Increased UAT coverage by 25%</li>
-    </ul>
-</div>
+<br>
 
+<p class="company">Business Analyst – Munich Re</p>
+<p class="duration">Mar 2023 – Sep 2024 | Dublin, Ireland</p>
+<ul>
+<li>Built Power BI dashboards tracking ARR & KPIs.</li>
+<li>Led Salesforce integration generating 1,400+ leads.</li>
+<li>Contributed to 2x revenue potential for insurance product.</li>
+</ul>
+</section>
+
+
+<section id="skills" class="fade">
 <h2>Core Competencies</h2>
-<div class="card">
-    Product Backlog | BRD/FRD | Agile Scrum | API Integrations | Power BI | Salesforce | UAT | Process Mapping
-</div>
+<p>
+Product Backlog Management · User Stories · Agile Scrum · API Integrations ·
+BRD / FRD · UAT · Power BI · Salesforce · Process Mapping
+</p>
+</section>
 
+
+<section id="education" class="fade">
 <h2>Education</h2>
-<div class="card">
-    <strong>Master’s in International Business</strong> – Maynooth University (Ireland) <br>
-    €5000 Merit Scholarship | International Student Ambassador <br><br>
-    <strong>Bachelor’s in Management Studies</strong> – University of Mumbai <br>
-    9.85/10 | Top 10%
-</div>
+<p><strong>Master’s in International Business</strong> – Maynooth University</p>
+<p class="duration">€5000 Merit Scholarship | International Student Ambassador</p>
+
+<br>
+
+<p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
+<p class="duration">9.85/10 | Top 10% Performer</p>
+</section>
 
 <footer>
-© 2026 Khush Deepak Satra | Built with clarity & impact
+© 2026 Khush Deepak Satra
 </footer>
 
 </div>
 
 <script>
 
-/* Dark Mode Toggle */
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+function toggleDark(){
+  document.body.classList.toggle("dark");
 }
 
-/* Smooth Scroll Animation */
-const cards = document.querySelectorAll('.card');
+function downloadCV(){
+  window.open("Khush_Satra_CV.pdf","_blank");
+}
 
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
+const fades = document.querySelectorAll(".fade");
 
-        if (position < screenPosition) {
-            card.classList.add('visible');
-        }
-    });
+window.addEventListener("scroll", () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("visible");
+    }
+  });
 });
-
-/* Metrics Counter Animation */
-const counters = document.querySelectorAll('.metric');
-
-const animateCounters = () => {
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const increment = target / 100;
-
-        const updateCounter = () => {
-            const current = +counter.innerText;
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(updateCounter, 20);
-            } else {
-                counter.innerText = target + "+";
-            }
-        };
-        updateCounter();
-    });
-};
-
-window.addEventListener('load', animateCounters);
-
-/* Download CV */
-function downloadCV() {
-    window.open("Khush_Satra_CV.pdf", "_blank");
-}
 
 </script>
 
