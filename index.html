@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khush Deepak Satra | Business Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
   --bg: #ffffff;
   --text: #111111;
-  --muted: #666666;
-  --border: #e5e5e5;
+  --muted: #555555;
+  --divider: #e5e5e5;
 }
 
 .dark {
   --bg: #0f172a;
   --text: #f1f5f9;
   --muted: #94a3b8;
-  --border: #1e293b;
+  --divider: #1e293b;
 }
 
 html {
@@ -33,40 +33,42 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: 0.3s ease;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 80px 20px;
+  line-height: 1.7;
 }
 
 nav {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 15px 0;
+  border-bottom: 1px solid var(--divider);
   text-align: center;
+  padding: 18px 0;
   z-index: 1000;
 }
 
 nav a {
-  margin: 0 18px;
+  margin: 0 22px;
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
+.container {
+  max-width: 760px;
+  margin: auto;
+  padding: 120px 20px 60px 20px;
+}
+
 h1 {
-  font-size: 36px;
-  margin-bottom: 8px;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .contact {
@@ -87,10 +89,10 @@ h1 {
 button {
   border: 1px solid var(--text);
   background: none;
-  padding: 6px 14px;
+  padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 button:hover {
@@ -99,16 +101,19 @@ button:hover {
 }
 
 section {
-  margin-top: 60px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 60px;
 }
 
 h2 {
-  font-size: 18px;
-  margin-bottom: 15px;
+  font-size: 22px;
   font-weight: 600;
-  text-transform: lowercase;
+  margin-bottom: 18px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--divider);
+  margin: 40px 0;
 }
 
 .company {
@@ -116,28 +121,28 @@ h2 {
 }
 
 .duration {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   margin-bottom: 8px;
 }
 
 ul {
   padding-left: 18px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 footer {
-  margin-top: 60px;
+  text-align: center;
   font-size: 13px;
   color: var(--muted);
-  text-align: center;
+  margin-top: 40px;
 }
 
-.toggle {
+.dark-toggle {
   position: fixed;
   right: 20px;
-  top: 15px;
-  font-size: 13px;
+  top: 18px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -147,13 +152,13 @@ footer {
 <body>
 
 <nav>
-  <a href="#summary">summary</a>
-  <a href="#experience">experience</a>
-  <a href="#skills">skills</a>
-  <a href="#education">education</a>
+  <a href="#summary">Summary</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
 </nav>
 
-<div class="toggle" onclick="toggleDark()">dark mode</div>
+<div class="dark-toggle" onclick="toggleDark()">Dark Mode</div>
 
 <div class="container">
 
@@ -168,23 +173,25 @@ footer {
 
 <button onclick="downloadResume()">Download Resume</button>
 
+<div class="divider"></div>
 
 <section id="summary">
-<h2>summary</h2>
+<h2>Summary</h2>
 <p>
 Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance, Public Sector, FMCG, and Pharmaceutical domains.
 </p>
 <p>
-Led HRMS implementations serving a user base exceeding 100,000+, reducing manual workflows by up to 60% through structured functional design and Agile delivery.
+Led HRMS implementations supporting a user base exceeding 100,000+, reducing manual workflows by up to 60% through structured functional design and Agile delivery.
 </p>
 <p>
 Operating in Product Owner-aligned responsibilities including backlog ownership, stakeholder workshops, sprint prioritisation, and value-driven execution.
 </p>
 </section>
 
+<div class="divider"></div>
 
 <section id="experience">
-<h2>experience</h2>
+<h2>Experience</h2>
 
 <p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
 <p class="duration">December 2024 – Present · India</p>
@@ -202,25 +209,26 @@ Operating in Product Owner-aligned responsibilities including backlog ownership,
 <p class="company">Business Analyst – Munich Re</p>
 <p class="duration">March 2023 – September 2024 · Dublin, Ireland</p>
 <ul>
-<li>Supported underwriting automation and enterprise data initiatives.</li>
-<li>Built Power BI dashboards tracking ARR and performance KPIs.</li>
+<li>Built Power BI dashboards tracking ARR and KPIs.</li>
 <li>Led Salesforce integration generating 1,400+ high-potential leads.</li>
 <li>Contributed to 2x revenue potential for an insurance product.</li>
 </ul>
 
 </section>
 
+<div class="divider"></div>
 
 <section id="skills">
-<h2>skills</h2>
+<h2>Skills</h2>
 <p>
 Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API Integrations · UAT · Power BI · Salesforce · Jira · Confluence
 </p>
 </section>
 
+<div class="divider"></div>
 
 <section id="education">
-<h2>education</h2>
+<h2>Education</h2>
 
 <p><strong>Master’s in International Business</strong> – Maynooth University</p>
 <p class="duration">Grade 2:1 · €5000 Merit Scholarship · International Student Ambassador</p>
@@ -239,7 +247,6 @@ Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API
 </div>
 
 <script>
-
 function toggleDark(){
   document.body.classList.toggle("dark");
 }
@@ -247,7 +254,6 @@ function toggleDark(){
 function downloadResume(){
   window.location.href = "Khush_Satra_CV.pdf";
 }
-
 </script>
 
 </body>
