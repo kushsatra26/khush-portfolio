@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khush Deepak Satra | Business Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,6 +14,7 @@
   --text: #111111;
   --muted: #666666;
   --accent: #000000;
+  --divider: #eaeaea;
 }
 
 .dark {
@@ -21,6 +22,7 @@
   --text: #f1f5f9;
   --muted: #94a3b8;
   --accent: #ffffff;
+  --divider: #1e293b;
 }
 
 html {
@@ -32,20 +34,20 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: 0.3s ease;
   line-height: 1.75;
+  transition: 0.3s ease;
 }
 
+/* NAV */
 nav {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   background: var(--bg);
-  padding: 22px 0;
+  padding: 20px 0;
   text-align: center;
+  border-bottom: 1px solid var(--divider);
   font-size: 15px;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
 }
 
 nav a {
@@ -59,49 +61,59 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* CONTAINER */
 .container {
   max-width: 760px;
   margin: auto;
   padding: 130px 20px 60px 20px;
 }
 
+/* NAME */
 h1 {
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
+/* CONTACT LINE */
 .contact-line {
   font-size: 15px;
   color: var(--muted);
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 .contact-line a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .contact-line a:hover {
   text-decoration: underline;
 }
 
+/* RESUME HIGHLIGHT */
+.resume-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* SECTIONS */
 section {
-  margin-bottom: 70px;
+  margin-bottom: 75px;
 }
 
 h2 {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   display: inline-block;
+  padding-bottom: 6px;
   border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
 }
 
 .company {
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .duration {
@@ -115,18 +127,24 @@ ul {
   margin-top: 6px;
 }
 
-footer {
-  margin-top: 60px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
+/* DARK MODE TOGGLE */
 .toggle {
   position: fixed;
   right: 25px;
   top: 20px;
   cursor: pointer;
   font-size: 14px;
+  color: var(--muted);
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 70px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 </style>
@@ -152,9 +170,8 @@ footer {
   📞 +91-9867495833 |
   📍 Mumbai, India |
   🔗 <a href="https://linkedin.com/in/khushsatra" target="_blank">LinkedIn</a> |
-  📎 <a href="Khush_Satra_CV.pdf" target="_blank">Resume</a>
+  📎 <a href="Khush_Satra_CV.pdf" target="_blank" class="resume-link">Download Resume</a>
 </div>
-
 
 <section id="summary">
 <h2>Summary</h2>
@@ -168,7 +185,6 @@ Led HRMS implementations supporting a user base exceeding 100,000+, reducing man
 Operating in Product Owner-aligned responsibilities including backlog ownership, stakeholder workshops, sprint prioritisation, and value-driven execution.
 </p>
 </section>
-
 
 <section id="experience">
 <h2>Experience</h2>
@@ -194,14 +210,12 @@ Operating in Product Owner-aligned responsibilities including backlog ownership,
 
 </section>
 
-
 <section id="skills">
 <h2>Skills</h2>
 <p>
 Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API Integrations · UAT · Power BI · Salesforce · Jira · Confluence
 </p>
 </section>
-
 
 <section id="education">
 <h2>Education</h2>
@@ -228,4 +242,3 @@ function toggleDark(){
 
 </body>
 </html>
-
