@@ -11,10 +11,9 @@
 
 :root {
   --bg: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --accent: #2563eb;
+  --text: #111111;
+  --muted: #666666;
+  --border: #e5e5e5;
 }
 
 .dark {
@@ -22,10 +21,11 @@
   --text: #f1f5f9;
   --muted: #94a3b8;
   --border: #1e293b;
-  --accent: #3b82f6;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -35,44 +35,80 @@ body {
   transition: 0.3s ease;
 }
 
-.wrapper {
-  max-width: 850px;
+.container {
+  max-width: 800px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
-header {
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
-  padding-bottom: 25px;
-  margin-bottom: 40px;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 36px;
   margin-bottom: 8px;
 }
 
-.subtitle {
-  font-size: 16px;
-  color: var(--muted);
-}
-
 .contact {
-  margin-top: 12px;
   font-size: 14px;
   color: var(--muted);
-}
-
-.section {
-  border: 1px solid var(--border);
-  padding: 25px;
   margin-bottom: 30px;
-  border-radius: 6px;
 }
 
-.section h2 {
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid var(--text);
+  background: none;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+section {
+  margin-top: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+h2 {
   font-size: 18px;
   margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: lowercase;
 }
 
 .company {
@@ -82,7 +118,7 @@ h1 {
 .duration {
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 ul {
@@ -90,34 +126,19 @@ ul {
   margin-top: 8px;
 }
 
-button {
-  border: 1px solid var(--accent);
-  background: none;
-  color: var(--accent);
-  padding: 6px 14px;
-  border-radius: 5px;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover {
-  background: var(--accent);
-  color: white;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
 footer {
-  text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 13px;
   color: var(--muted);
+  text-align: center;
+}
+
+.toggle {
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 </style>
@@ -125,94 +146,91 @@ footer {
 
 <body>
 
-<div class="wrapper">
+<nav>
+  <a href="#summary">summary</a>
+  <a href="#experience">experience</a>
+  <a href="#skills">skills</a>
+  <a href="#education">education</a>
+</nav>
 
-<div class="topbar">
-  <div></div>
-  <button onclick="toggleDark()">Toggle Dark Mode</button>
+<div class="toggle" onclick="toggleDark()">dark mode</div>
+
+<div class="container">
+
+<h1>Khush Deepak Satra</h1>
+
+<div class="contact">
+  📍 Mumbai, India ·
+  📞 +91-9867495833 ·
+  📧 <a href="mailto:kush.satra26@gmail.com">kush.satra26@gmail.com</a> ·
+  🔗 <a href="https://linkedin.com/in/khushsatra" target="_blank">linkedin.com/in/khushsatra</a>
 </div>
 
-<header>
-  <h1>Khush Deepak Satra</h1>
-  <div class="subtitle">
-    Business Analyst | PSPO & PSM Trained | Agile Delivery | Enterprise & Public Sector Systems
-  </div>
-
-  <div class="contact">
-    📍 Mumbai, India <br>
-    📞 +91-9867495833 <br>
-    📧 kush.satra26@gmail.com <br>
-    🔗 linkedin.com/in/khushsatra
-  </div>
-
-  <br>
-  <button onclick="downloadCV()">Download CV</button>
-</header>
+<button onclick="downloadResume()">Download Resume</button>
 
 
-<div class="section">
-  <h2>Professional Summary</h2>
-  <p>
-    Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance,
-    Public Sector, FMCG, and Pharmaceutical domains.
-  </p>
-  <p>
-    Led functional design and Agile delivery for HRMS platforms supporting a user base exceeding 100,000+
-    while reducing manual workflows by up to 60%.
-  </p>
-  <p>
-    Operating in Product Owner-aligned responsibilities including backlog ownership, stakeholder workshops,
-    sprint prioritisation, and value-driven delivery.
-  </p>
-</div>
+<section id="summary">
+<h2>summary</h2>
+<p>
+Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance, Public Sector, FMCG, and Pharmaceutical domains.
+</p>
+<p>
+Led HRMS implementations serving a user base exceeding 100,000+, reducing manual workflows by up to 60% through structured functional design and Agile delivery.
+</p>
+<p>
+Operating in Product Owner-aligned responsibilities including backlog ownership, stakeholder workshops, sprint prioritisation, and value-driven execution.
+</p>
+</section>
 
 
-<div class="section">
-  <h2>Experience</h2>
+<section id="experience">
+<h2>experience</h2>
 
-  <p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
-  <p class="duration">December 2024 – Present | India</p>
-  <ul>
-    <li>Led end-to-end requirements for 4+ HR modules (Grievance, Engagement, Leave, Attendance).</li>
-    <li>Delivered HRMS solutions serving a 100K+ enterprise user base.</li>
-    <li>Reduced manual workflows by 60% through structured BRD/FRD documentation.</li>
-    <li>Designed 20+ functional wireframes translating As-Is to To-Be system behaviour.</li>
-    <li>Acted as Product Owner proxy managing backlog refinement.</li>
-    <li>Led UAT planning increasing coverage by 25% and preventing critical production defects.</li>
-  </ul>
+<p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
+<p class="duration">December 2024 – Present · India</p>
+<ul>
+<li>Led requirements and functional design for 4+ HR modules on PeopleStrong HRMS.</li>
+<li>Delivered solutions supporting a 100K+ enterprise user base.</li>
+<li>Reduced manual workflows by 60% through BRD/FRD documentation.</li>
+<li>Designed 20+ functional wireframes translating As-Is to To-Be workflows.</li>
+<li>Acted as Product Owner proxy managing backlog refinement.</li>
+<li>Increased UAT coverage by 25%, preventing critical production defects.</li>
+</ul>
 
-  <br>
+<br>
 
-  <p class="company">Business Analyst – Munich Re</p>
-  <p class="duration">March 2023 – September 2024 | Dublin, Ireland</p>
-  <ul>
-    <li>Supported underwriting automation and enterprise data initiatives.</li>
-    <li>Built Power BI dashboards tracking ARR, renewals, and KPIs.</li>
-    <li>Led Salesforce data integration generating 1,400+ high-potential leads.</li>
-    <li>Contributed to 2x revenue potential for insurance product.</li>
-  </ul>
+<p class="company">Business Analyst – Munich Re</p>
+<p class="duration">March 2023 – September 2024 · Dublin, Ireland</p>
+<ul>
+<li>Supported underwriting automation and enterprise data initiatives.</li>
+<li>Built Power BI dashboards tracking ARR and performance KPIs.</li>
+<li>Led Salesforce integration generating 1,400+ high-potential leads.</li>
+<li>Contributed to 2x revenue potential for an insurance product.</li>
+</ul>
 
-</div>
-
-
-<div class="section">
-  <h2>Core Competencies</h2>
-  Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API Integrations · UAT · Power BI · Salesforce · Jira · Confluence
-</div>
+</section>
 
 
-<div class="section">
-  <h2>Education</h2>
+<section id="skills">
+<h2>skills</h2>
+<p>
+Product Backlog Management · Agile Scrum · BRD / FRD · Process Mapping · API Integrations · UAT · Power BI · Salesforce · Jira · Confluence
+</p>
+</section>
 
-  <p><strong>Master’s in International Business</strong> – Maynooth University</p>
-  <p class="duration">Grade 2:1 | €5000 Merit Scholarship | International Student Ambassador</p>
 
-  <br>
+<section id="education">
+<h2>education</h2>
 
-  <p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
-  <p class="duration">9.85/10 | Scholarship Awardee | Top 10% Performer</p>
-</div>
+<p><strong>Master’s in International Business</strong> – Maynooth University</p>
+<p class="duration">Grade 2:1 · €5000 Merit Scholarship · International Student Ambassador</p>
 
+<br>
+
+<p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
+<p class="duration">9.85/10 · Scholarship Awardee · Top 10% Performer</p>
+
+</section>
 
 <footer>
 © 2026 Khush Deepak Satra
@@ -226,8 +244,8 @@ function toggleDark(){
   document.body.classList.toggle("dark");
 }
 
-function downloadCV(){
-  window.open("Khush_Satra_CV.pdf","_blank");
+function downloadResume(){
+  window.location.href = "Khush_Satra_CV.pdf";
 }
 
 </script>
