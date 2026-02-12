@@ -1,308 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khush Deepak Satra | Business Analyst</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khush Deepak Satra | Business Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+            --tag-bg: #f1f5f9;
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        .dark {
+            --bg: #020617;
+            --card-bg: #0f172a;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #60a5fa;
+            --border: #1e293b;
+            --tag-bg: #1e293b;
+            --shadow: 0 10px 40px -15px rgba(0,0,0,0.5);
+        }
 
-<style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
-:root {
-  --bg: #f0fdf4; /* light green background */
-  --card: #ffffff;
-  --text: #111111;
-  --muted: #666666;
-  --accent: #16a34a; /* green accent */
-  --divider: #d1fae5;
-  --side-border: #bbf7d0;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
 
-.dark {
-  --bg: #0f172a;
-  --card: #1e293b;
-  --text: #f1f5f9;
-  --muted: #94a3b8;
-  --accent: #22c55e;
-  --divider: #1e293b;
-  --side-border: #1e293b;
-}
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(var(--card-bg), 0.7);
+            backdrop-filter: blur(12px);
+            padding: 8px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+            box-shadow: var(--shadow);
+        }
 
-html {
-  scroll-behavior: smooth;
-}
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-muted); 
+            font-size: 13px; 
+            font-weight: 600; 
+            transition: 0.2s; 
+        }
+        nav a:hover { color: var(--accent); }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  transition: 0.3s ease;
-}
+        .toggle-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        .toggle-btn:hover { transform: scale(1.1); }
 
-/* SIDE BORDERS */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  width: 8px;
-  height: 100%;
-  background: var(--side-border);
-  z-index: 0;
-}
+        /* LAYOUT */
+        .container { max-width: 850px; margin: auto; padding: 140px 20px 80px; }
+        
+        section { margin-bottom: 80px; }
 
-body::before { left: 0; }
-body::after { right: 0; }
+        .card {
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
 
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: var(--bg);
-  padding: 14px 0;
-  text-align: center;
-  border-bottom: 1px solid var(--divider);
-  font-size: 14px;
-  z-index: 1000;
-}
+        h1 { font-size: clamp(2.5rem, 8vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1; }
+        .gradient-text { background: linear-gradient(90deg, var(--accent), #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ""; height: 1px; flex: 1; background: var(--border); }
 
-nav a {
-  margin: 0 16px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-}
+        /* CONTENT ITEMS */
+        .item { margin-bottom: 35px; transition: 0.3s; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .item-title { font-weight: 700; font-size: 1.15rem; color: var(--text-main); }
+        .item-date { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
+        .item-sub { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; }
 
-nav a:hover {
-  color: var(--accent);
-}
+        /* TAGS */
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tag { background: var(--tag-bg); padding: 6px 14px; border-radius: 10px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); border: 1px solid var(--border); transition: 0.2s; }
+        .tag:hover { border-color: var(--accent); color: var(--accent); }
 
-/* DARK MODE TOGGLE */
-.toggle {
-  position: fixed;
-  right: 20px;
-  top: 15px;
-  font-size: 13px;
-  cursor: pointer;
-  color: var(--muted);
-}
+        /* CONTACT SECTION */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .contact-card {
+            background: var(--tag-bg);
+            padding: 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--text-main);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+        .contact-card:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+        .contact-card b { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+        .contact-card span { font-size: 0.85rem; opacity: 0.8; }
 
-.toggle:hover {
-  color: var(--accent);
-}
+        .resume-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 14px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 25px;
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+            transition: 0.3s;
+        }
+        .resume-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.5); }
 
-/* CONTAINER */
-.container {
-  max-width: 760px;
-  margin: auto;
-  padding: 110px 20px 50px 20px;
-  position: relative;
-  z-index: 1;
-}
-
-/* CARD */
-.card {
-  background: var(--card);
-  padding: 35px;
-  border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-}
-
-/* HEADINGS */
-h1 {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 14px;
-  display: inline-block;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-}
-
-/* CONTACT */
-.contact-line {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-
-.contact-line a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.contact-line a:hover {
-  color: var(--accent);
-}
-
-/* BUTTON */
-.resume-btn {
-  display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 35px;
-  padding: 8px 18px;
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
-
-.resume-btn:hover {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-/* SECTIONS */
-section {
-  margin-bottom: 50px;
-}
-
-.company {
-  font-weight: 600;
-  margin-top: 18px;
-}
-
-.duration {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-ul {
-  padding-left: 18px;
-  margin-top: 6px;
-}
-
-/* FADE IN */
-.fade {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.6s ease;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-</style>
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .card { padding: 30px 20px; }
+            nav { width: 90%; justify-content: center; gap: 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <nav>
-  <a href="#summary">Summary</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<div class="toggle" onclick="toggleDark()">Dark Mode</div>
+<button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌓</button>
 
 <div class="container">
-<div class="card">
+    <header style="margin-bottom: 60px; text-align: center;">
+        <p style="text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; font-size: 0.8rem; margin-bottom: 10px;">Portfolio 2024</p>
+        <h1>Khush <span class="gradient-text">Satra</span></h1>
+        <p style="font-size: 1.4rem; color: var(--text-muted); margin: 15px 0;">Business Analyst & Data Enthusiast</p>
+        <a href="mailto:kushsatra26@gmail.com" class="resume-btn">Download Resume</a>
+    </header>
 
-<h1 class="fade">Khush Deepak Satra</h1>
+    <div class="card">
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1rem;">I am a Business Analyst based in Mumbai, focused on turning raw data into strategic assets. I bridge the gap between technical complexity and business clarity.</p>
+        </section>
 
-<div class="contact-line fade">
-  📧 <a href="mailto:kush.satra26@gmail.com">kush.satra26@gmail.com</a> |
-  📞 +91-9867495833 |
-  📍 Mumbai, India |
-  🔗 <a href="https://linkedin.com/in/khushsatra" target="_blank">LinkedIn</a>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Data Analyst Intern</span>
+                    <span class="item-date">Present</span>
+                </div>
+                <div class="item-sub">TechFlow Solutions</div>
+                <p>Leading the migration of legacy Excel reports to automated Power BI dashboards. Improved data accuracy by 25% through SQL optimization.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Work</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Retail Demand Forecasting</span>
+                </div>
+                <p>Predictive modeling to optimize inventory levels for a regional retail chain using Python and SARIMA.</p>
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Statistics</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Toolkit</h2>
+            <div class="tags">
+                <span class="tag">SQL (PostgreSQL)</span>
+                <span class="tag">Python (Pandas/NumPy)</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Advanced Excel</span>
+                <span class="tag">Google Analytics</span>
+                <span class="tag">R Programming</span>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-bottom: 0;">
+            <h2>Get In Touch</h2>
+            <p>I'm currently looking for new opportunities. Let's connect!</p>
+            <div class="contact-grid">
+                <a href="mailto:kushsatra26@gmail.com" class="contact-card">
+                    <b>Email</b>
+                    <span>kushsatra26@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/khush-satra" target="_blank" class="contact-card">
+                    <b>LinkedIn</b>
+                    <span>khush-satra</span>
+                </a>
+                <a href="https://github.com/kushsatra26" target="_blank" class="contact-card">
+                    <b>GitHub</b>
+                    <span>kushsatra26</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2024 Khush Satra • Built with focus & code
+    </footer>
 </div>
-
-<a href="Khush_Satra_CV.pdf" target="_blank" class="resume-btn fade">Download Resume</a>
-
-<section id="summary" class="fade">
-<h2>Summary</h2>
-<p>
-Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance and Public Sector domains.
-</p>
-<p>
-Led HRMS implementations supporting a user base exceeding 100,000+, reducing manual workflows by 60%.
-</p>
-</section>
-
-<section id="experience" class="fade">
-<h2>Experience</h2>
-
-<p class="company">Business Analyst – Kellton Tech (LIC HRMS Project)</p>
-<p class="duration">Dec 2024 – Present · India</p>
-<ul>
-<li>Led requirements for 4+ HR modules on PeopleStrong HRMS.</li>
-<li>Reduced manual workflows by 60%.</li>
-<li>Improved UAT coverage by 25%.</li>
-</ul>
-
-<p class="company">Business Analyst – Munich Re</p>
-<p class="duration">Mar 2023 – Sep 2024 · Dublin, Ireland</p>
-<ul>
-<li>Built Power BI dashboards tracking KPIs.</li>
-<li>Generated 1,400+ high-potential leads.</li>
-<li>Contributed to 2x revenue potential.</li>
-</ul>
-
-</section>
-
-<section id="skills" class="fade">
-<h2>Skills</h2>
-<p>
-Product Backlog · Agile Scrum · BRD / FRD · API Integrations · UAT · Power BI · Salesforce · Jira
-</p>
-</section>
-
-<section id="education" class="fade">
-<h2>Education</h2>
-<p><strong>Master’s in International Business</strong> – Maynooth University</p>
-<p class="duration">Grade 2:1 · €5000 Merit Scholarship</p>
-
-<p><strong>Bachelor’s in Management Studies</strong> – University of Mumbai</p>
-<p class="duration">9.85/10 · Top 10%</p>
-</section>
-
-<footer>
-© Khush Deepak Satra Business Analyst
-</footer>
-
-</div>
-</div>
-
-<script>
-
-function toggleDark(){
-  document.body.classList.toggle("dark");
-}
-
-const faders = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    if(el.getBoundingClientRect().top < window.innerHeight - 80){
-      el.classList.add('visible');
-    }
-  });
-});
-window.addEventListener('load', () => {
-  faders.forEach(el => el.classList.add('visible'));
-});
-
-</script>
 
 </body>
 </html>
