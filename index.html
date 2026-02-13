@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khush Deepak Satra | Business Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <title>Khush Satra | Business Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f8fafc;
@@ -57,13 +57,7 @@
             box-shadow: var(--shadow);
         }
 
-        nav a { 
-            text-decoration: none; 
-            color: var(--text-muted); 
-            font-size: 13px; 
-            font-weight: 600; 
-            transition: 0.2s; 
-        }
+        nav a { text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; transition: 0.2s; }
         nav a:hover { color: var(--accent); }
 
         .toggle-btn {
@@ -77,19 +71,15 @@
             border-radius: 50%;
             cursor: pointer;
             z-index: 1000;
-            font-size: 20px;
-            box-shadow: var(--shadow);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.2s;
+            box-shadow: var(--shadow);
         }
-        .toggle-btn:hover { transform: scale(1.1); }
 
         /* LAYOUT */
         .container { max-width: 850px; margin: auto; padding: 140px 20px 80px; }
-        
-        section { margin-bottom: 80px; }
+        section { margin-bottom: 60px; }
 
         .card {
             background: var(--card-bg);
@@ -97,65 +87,38 @@
             border-radius: 28px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
         }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1; }
+        h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1.1; }
         .gradient-text { background: linear-gradient(90deg, var(--accent), #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; font-weight: 800; }
         h2::after { content: ""; height: 1px; flex: 1; background: var(--border); }
 
-        /* CONTENT ITEMS */
-        .item { margin-bottom: 35px; transition: 0.3s; }
-        .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        /* ITEMS */
+        .item { margin-bottom: 30px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
         .item-title { font-weight: 700; font-size: 1.15rem; color: var(--text-main); }
-        .item-date { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
-        .item-sub { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; }
+        .item-date { color: var(--text-muted); font-size: 0.85rem; font-weight: 600; }
+        .item-sub { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; }
+        
+        ul { padding-left: 1.2rem; margin-top: 8px; }
+        li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 8px; }
 
         /* TAGS */
-        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .tag { background: var(--tag-bg); padding: 6px 14px; border-radius: 10px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); border: 1px solid var(--border); transition: 0.2s; }
-        .tag:hover { border-color: var(--accent); color: var(--accent); }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: var(--tag-bg); padding: 5px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text-main); border: 1px solid var(--border); }
 
-        /* CONTACT SECTION */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .contact-card {
+        .award-item {
             background: var(--tag-bg);
-            padding: 20px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: var(--text-main);
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: 0.3s;
+            padding: 15px 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 15px;
         }
-        .contact-card:hover { background: var(--accent); color: white; transform: translateY(-3px); }
-        .contact-card b { display: block; font-size: 1.1rem; margin-bottom: 4px; }
-        .contact-card span { font-size: 0.85rem; opacity: 0.8; }
-
-        .resume-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white !important;
-            padding: 14px 30px;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 25px;
-            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
-            transition: 0.3s;
-        }
-        .resume-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.5); }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
             .card { padding: 30px 20px; }
-            nav { width: 90%; justify-content: center; gap: 10px; }
         }
     </style>
 </head>
@@ -164,86 +127,120 @@
 <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#skills">Skills</a>
+    <a href="#awards">Achievements</a>
 </nav>
 
 <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌓</button>
 
 <div class="container">
-    <header style="margin-bottom: 60px; text-align: center;">
-        <p style="text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; font-size: 0.8rem; margin-bottom: 10px;">Portfolio 2024</p>
+    <header style="margin-bottom: 50px;">
         <h1>Khush <span class="gradient-text">Satra</span></h1>
-        <p style="font-size: 1.4rem; color: var(--text-muted); margin: 15px 0;">Business Analyst & Data Enthusiast</p>
-        <a href="mailto:kushsatra26@gmail.com" class="resume-btn">Download Resume</a>
+        <p style="font-size: 1.25rem; color: var(--text-main); margin: 15px 0; font-weight: 600;">Business Analyst | PSPO & PSM Trained | Agile Delivery</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Enterprise & Public Sector Systems • Mumbai, India</p>
+        
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="mailto:kush.satra26@gmail.com" style="background: var(--accent); color: white; padding: 10px 20px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Email Me</a>
+            <a href="https://www.linkedin.com/in/khushsatra" target="_blank" style="border: 1px solid var(--border); color: var(--text-main); padding: 10px 20px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">LinkedIn</a>
+        </div>
     </header>
 
     <div class="card">
         <section id="about">
-            <h2>About Me</h2>
-            <p style="font-size: 1.1rem;">I am a Business Analyst based in Mumbai, focused on turning raw data into strategic assets. I bridge the gap between technical complexity and business clarity.</p>
+            <h2>Profile</h2>
+            <p style="font-size: 1.05rem; color: var(--text-muted);">
+                Business Analyst with 3+ years of experience delivering enterprise-scale digital systems across Insurance, Public Sector, FMCG, and Pharmaceutical domains. Proven ability to document complex workflows and support release readiness for platforms serving 100K+ users[cite: 6].
+            </p>
         </section>
 
         <section id="experience">
-            <h2>Experience</h2>
+            <h2>Work Experience</h2>
+            
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">Data Analyst Intern</span>
-                    <span class="item-date">Present</span>
+                    <span class="item-title">Business Analyst</span>
+                    <span class="item-date">Dec 2024 – Present</span>
                 </div>
-                <div class="item-sub">TechFlow Solutions</div>
-                <p>Leading the migration of legacy Excel reports to automated Power BI dashboards. Improved data accuracy by 25% through SQL optimization.</p>
+                <div class="item-sub">Kellton Tech - LIC of India HRMS Project</div>
+                <ul>
+                    <li>Led requirements elicitation for 4+ core HR modules supporting 100K+ users[cite: 17].</li>
+                    <li>Designed 20+ interactive HTML-based wireframes and prototypes for build-ready functional views[cite: 20].</li>
+                    <li>Reduced manual workflows by 60% through standardized functional specifications.</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="projects">
-            <h2>Selected Work</h2>
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">Retail Demand Forecasting</span>
+                    <span class="item-title">Business Analyst - Graduate Program</span>
+                    <span class="item-date">Mar 2023 – Sep 2024</span>
                 </div>
-                <p>Predictive modeling to optimize inventory levels for a regional retail chain using Python and SARIMA.</p>
-                <div class="tags">
-                    <span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Statistics</span>
-                </div>
+                <div class="item-sub">Munich RE, Dublin, Ireland</div>
+                <ul>
+                    <li>Built Power BI dashboards to track ARR and performance KPIs for senior stakeholders[cite: 26].</li>
+                    <li>Led a Salesforce data integration initiative generating 1,400+ high-potential leads.</li>
+                    <li>Developed demo frameworks and KPIs contributing to 2x revenue potential[cite: 28].</li>
+                </ul>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Technical Toolkit</h2>
-            <div class="tags">
-                <span class="tag">SQL (PostgreSQL)</span>
-                <span class="tag">Python (Pandas/NumPy)</span>
-                <span class="tag">Tableau</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">Advanced Excel</span>
-                <span class="tag">Google Analytics</span>
-                <span class="tag">R Programming</span>
+            <h2>Skills & Certifications</h2>
+            <div style="margin-bottom: 25px;">
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; color: var(--text-muted);">TOOLS & TECH</p>
+                <div class="tags">
+                    <span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Power BI</span>
+                    <span class="tag">Tableau</span><span class="tag">Salesforce</span><span class="tag">Figma</span>
+                    <span class="tag">Balsamiq</span><span class="tag">Visio</span><span class="tag">SQL</span>
+                    <span class="tag">UML</span><span class="tag">Miro</span><span class="tag">SharePoint</span> [cite: 10]
+                </div>
+            </div>
+            <div>
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; color: var(--text-muted);">CERTIFICATIONS</p>
+                <div class="tags">
+                    <span class="tag" style="border-color: var(--accent);">PSM | PSPO Certified</span>
+                    <span class="tag">CBAP Trained</span>
+                    <span class="tag">Agile Business Analysis</span> [cite: 11]
+                </div>
             </div>
         </section>
 
-        <section id="contact" style="margin-bottom: 0;">
-            <h2>Get In Touch</h2>
-            <p>I'm currently looking for new opportunities. Let's connect!</p>
-            <div class="contact-grid">
-                <a href="mailto:kushsatra26@gmail.com" class="contact-card">
-                    <b>Email</b>
-                    <span>kushsatra26@gmail.com</span>
-                </a>
-                <a href="https://linkedin.com/in/khush-satra" target="_blank" class="contact-card">
-                    <b>LinkedIn</b>
-                    <span>khush-satra</span>
-                </a>
-                <a href="https://github.com/kushsatra26" target="_blank" class="contact-card">
-                    <b>GitHub</b>
-                    <span>kushsatra26</span>
-                </a>
+        <section id="awards">
+            <h2>Achievements</h2>
+            <div class="award-item">
+                <span style="font-weight: 700; display: block; color: var(--text-main);">Academic Excellence</span>
+                <span style="font-size: 0.9rem; color: var(--text-muted);">IR 1 in Semester 4 during graduation and top 10% of class consistently.</span>
+            </div>
+            <div class="award-item">
+                <span style="font-weight: 700; display: block; color: var(--text-main);">Leadership</span>
+                <span style="font-size: 0.9rem; color: var(--text-muted);">Elected International Student Ambassador at Maynooth University.</span>
+            </div>
+            <div class="award-item">
+                <span style="font-weight: 700; display: block; color: var(--text-main);">Merit Scholarships</span>
+                <span style="font-size: 0.9rem; color: var(--text-muted);">Awarded €5000 Masters scholarship and full 3-year undergraduate scholarship[cite: 34, 37].</span>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Master's in International Business</span>
+                    <span class="item-date">2021 – 2022</span>
+                </div>
+                <div class="item-sub">Maynooth University, Ireland (Grade 2:1) [cite: 31, 32]</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Bachelor's in Management Studies</span>
+                    <span class="item-date">2017 – 2020</span>
+                </div>
+                <div class="item-sub">University of Mumbai (Grade 9.85/10) [cite: 35, 36]</div>
             </div>
         </section>
     </div>
 
-    <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
-        &copy; 2024 Khush Satra • Built with focus & code
+    <footer style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">
+        &copy; 2026 Khush Satra • Business Analyst
     </footer>
 </div>
 
